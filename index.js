@@ -10,6 +10,15 @@ async function run() {
 
     let regex = new RegExp(`(^(\\[(${jiraPrefix})-[0-9]+\\]|\\[NO-ISSUE\\]|DEPLOY)|\\(deps\\): bump)`);
 
+    console.log('TITLE: ' + prTitle)
+    console.log('BODY: ' + prTitle)
+    
+    if (!regex.test(prTitle)) {
+      console.log('Jira Issue Key missing in PR title')
+    }
+    if (!regex.test(prBody)) {
+      console.log('Jira Issue Key missing in PR title or description')
+    }
     if (!regex.test(prTitle) && !regex.test(prBody)) {
       core.setFailed("Jira Issue Key missing in PR title or description.");
       return;
