@@ -8,7 +8,7 @@ async function run() {
     const prTitle = github.context.payload.pull_request.title;
     const prBody = github.context.payload.pull_request.body;
 
-    let regex = new RegExp(`(^(\\[(${jiraPrefix})-[0-9]+\\]|\\[NO-ISSUE\\]|DEPLOY)|\\(deps\\): bump)`);
+    let regex = new RegExp(`(^(\\[(${jiraPrefix})-[0-9]+\\]|\\[NO-ISSUE\\]|DEPLOY|Revert)|\\(deps\\): bump)`);
 
     console.log('TITLE: ' + prTitle)
     console.log('BODY: ' + prTitle)
