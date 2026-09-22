@@ -19,6 +19,6 @@
   "homepage": "https://github.com/fgiuliani/jira-issue-key-checker#readme",
   "dependencies": {
     "@actions/core": "^1.1.1",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^9.1.1"
   }
 }
